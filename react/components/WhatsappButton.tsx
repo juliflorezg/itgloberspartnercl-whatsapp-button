@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
 type Props = {
   logo: string, //whatsapp.png
@@ -16,10 +15,7 @@ const WhatsappButton = ({
   width=80, 
   height=80
 }: Props) => {
-  const formattedMessage = message.replace(/ /g, '%20')
-  console.log({
-    logo, phone, formattedMessage
-  })
+  const formattedMessage = message.replaceAll(' ', '%20')
   return (<>
   <div className='fixed bottom-2 right-2 flex flexColumn'>
     <a 
